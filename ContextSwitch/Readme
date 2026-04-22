@@ -1,0 +1,12 @@
+If P0 -> P1 
+timer Interrupt 
+
+then P0 's RIP, RSP, RFLAGS by CPU save into Kernel stack
+P0's register save by OS into PCB0
+
+however P1
+P1 get register from PCB1 
+but RIP, RSP, RFLAGS are pushed in kernel stack
+and iret pop then P1 can use RIP, RSP, RFLAGS
+
+[kernel_push.cpp]
