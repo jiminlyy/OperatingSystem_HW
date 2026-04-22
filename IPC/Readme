@@ -1,0 +1,19 @@
+Message passing은 결국
+piping을 이용한다. 
+[MessagePassing.cpp]
+이 코드 해석
+
+부모
+
+* 파이프 생성
+* 자식 생성
+* 읽기 끝 fd[0] 닫음
+* fd[1]에 "hello pipe\n" 씀
+
+자식
+
+* 쓰기 끝 fd[1] 닫음
+* fd[0]에서 읽음
+* 읽은 데이터를 stdout(1번 fd)에 출력
+
+즉 부모가 보낸 메시지를 자식이 받는 구조이다. 
